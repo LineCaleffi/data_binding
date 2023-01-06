@@ -1,0 +1,37 @@
+<section class="property-binding">
+    <article>
+        <h3 class="title">Interpolação / Interpolation</h3>
+        <!-- O valor dentro das chaves tem que ser o mesmo nome que está declarado no component.ts -->
+        <p>String renderizada com interpolação: {{ url }}</p>
+        <!-- Tambpem pode ser definido uma questão matemática dentro da interpolação -->
+        <p>Resultado de 1 + 1 é: {{ 1 + 1 }}</p>
+        <!-- Outro exemplo de interpolação que puxa um método da classe component.ts-->
+        <p>Resultado de 1 + 1 nãe é: {{ 1 + 1 + getValor() }} </p>
+        <!-- Interpolação com a variável e o método -->
+        <p>Interpolação com a variável e o método: {{ cursoAngular && getCurtirCurso() }}</p>
+    </article>
+
+ <!--   <article>
+        <h3> Property Binding </h3>
+        <p>Imagem com Property Binding</p>
+        <img [src]="urlImagem2">    //o [] define que é um property binding
+    </article>
+-->
+
+<ul>Cursos em lista com interpolação:
+    <li *ngFor="let curso of cursos">{{ curso }}</li>
+</ul>
+
+</section>
+
+
+<section class="input-output-properties">
+    <article>
+        <h2 class="title">Input/Output Properties</h2>
+        <p><curso [nome]="nomeDoCurso"></curso></p> <!-- Input-->
+
+       
+        <contador (mudouValor)="onMudouValor($event)"></contador>  <!-- Output - valor inicial 0--><br>
+        <contador [valor]="valorInicial" (mudouValor)="onMudouValor($event)"></contador> <!-- Output - Entra com o valor inicial que está definido no component.ts-->
+    </article>
+</section>

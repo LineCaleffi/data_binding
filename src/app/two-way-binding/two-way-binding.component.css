@@ -1,0 +1,26 @@
+.title{
+    color: rgb(133, 122, 255);
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+input{
+    margin-top: 5px;
+    border-color: aquamarine;
+}
+
+p, label {
+    margin-left: 10px;
+}
+
+.input{
+    margin-left: 10px;
+}
+
+.nome{
+    margin-left: 48px;
+}
+
+.idade{
+    margin-left: 51px;
+}

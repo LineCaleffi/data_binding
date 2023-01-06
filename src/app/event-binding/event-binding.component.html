@@ -1,0 +1,22 @@
+<section class="event-binding">
+    <article>
+        <h2> Event Binding</h2>
+        <div>
+            <!-- Ao clicar no botão abre um alerta com a mensagem definida no component.ts (metodo buttonClick())-->
+            <button (click)="buttonClick()" class="btn btn-primary">Clique aqui</button>
+
+            <br><br>
+            <input type="text" (keyup)="onKeyUp($event)"/>
+            <p>Valor atual: {{ valorAtual }}</p>
+
+            <!-- Salvar valor após clicar no enter (keyup.enter) / Salvar o valor após clicar em qualquer canto da tela (blur) -->
+            <input type="text" (keyup.enter)="salvarValor(campoInput.value)" (blur)="salvarValor(campoInput.value)" #campoInput/>
+            <p>Valor salvo: {{ valorSalvo }}</p>
+
+            <!-- Quando o mouse passa por cima do texto (mouseover) / Quando o mouse sair de cima do texto (mouseout) 
+                [class.highlight] -> property binding que define um estilo quando o mouse estiver em cima do texto -->
+            <span (mouseover)="onMouseOverOut()" (mouseout)="onMouseOverOut()" 
+            [class.highlight]="isMouseOver">Passe o mouse sobre mim</span>
+        </div>
+    </article>
+</section>

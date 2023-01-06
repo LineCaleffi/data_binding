@@ -1,0 +1,23 @@
+<section class="two-way-binding">
+    <article>
+        <h2 class="title"> Two-Way Data Binding</h2>    
+        <div>
+            <input class='input'type="text" [ngModel]="nome" (ngModelChange)="nome = $event"/>
+            
+            <!-- Usando two-way data binding [( xxx )]-->
+            <input class='input' type="text" [(ngModel)]="nome2">
+            <input class='input'type="text" bindon-ngModel="nome"/>
+            <br><br>
+            <p> Você digitou sem two-way: {{ nome }}</p>
+            <p> Você digitou com two-way: {{ nome2 }}</p>
+        </div>
+
+        <h2 class="title">Usando two-Way com Interpolação: </h2>
+        <div>
+            <label>Nome:<input class="nome" type="text" [(ngModel)]="pessoa.nome"> </label>
+            <br><label>Sobrenome: </label><input class="input" type="text" [(ngModel)]="pessoa.sobrenome">
+            <br><label>Idade: </label><input  class="idade" type="text" [(ngModel)]="pessoa.idade">
+            <p> Meu nome é {{ pessoa.nome }} {{pessoa.sobrenome}} e tenho {{ pessoa.idade }} anos.</p>
+        </div>
+    </article>    
+</section>

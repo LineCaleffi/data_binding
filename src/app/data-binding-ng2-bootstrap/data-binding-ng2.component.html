@@ -1,0 +1,37 @@
+<section class="class-style-binding">
+    <article>
+        <h3>Class Binding - Usando ng2-bootstrap</h3>
+        <div>
+            Selecione uma classe:
+            <select #classe (change)="0">
+                <option>Selecione</option>
+                <option value="alert-success">Sucesso</option>
+                <option value="alert-info">Info</option>
+                <option value="alert-warning">Alerta</option>
+                <option value="alert-danger">Erro</option>
+            </select>
+
+            <!--Quando é selecionado uma classe acima compara o valor selecionado com o nome do alert e mostra a cor correta -->
+            <!-- Se o valor da classe selecionda for igual a alert-success ele fica verde-->
+            <div class="alert" role="alert" [class.alert-success]="classe.value == 'alert-success'">Sucesso</div> 
+
+            <!-- Se o valor da classe selecionda for igual a alert-info ele fica azul -->
+            <div class="alert" role="alert" [class.alert-info]="classe.value == 'alert-info'">Info</div>
+
+            <!-- Se o valor da classe selecionda for igual a alert-warning ele fica amarelo-->
+            <div class="alert" role="alert" [class.alert-warning]="classe.value == 'alert-warning'">Alerta</div>
+
+            <!-- Se o valor da classe selecionda for igual a alert-danger ele fica vermelho-->
+            <div class="alert" role="alert" [class.alert-danger]="classe.value == 'alert-danger'">Erro</div>
+
+            <div class="alert {{ classe.value }}" role="alert">Texto colorido conforme valor do combobox</div>    
+
+            <h3>Usando Style Binding</h3>
+            <!-- Se o valor for igual a alert-xxxxxx o texto e a cor fica visivel, senão fica bloqueado -->
+            <div class="alert alert-success" role="alert" [style.display]="classe.value == 'alert-success' ? 'block' : 'none'">Esse texto somente aparece em caso de SUCESSO</div>
+            <div class="alert alert-info" role="alert" [style.display]="classe.value == 'alert-info' ? 'block' : 'none'">Esse texto somente aparece em caso de INFO</div>
+            <div class="alert alert-warning" role="alert" [style.display]="classe.value == 'alert-warning' ? 'block' : 'none'">Esse texto somente aparece em caso de ALERTA</div>
+            <div class="alert alert-danger" role="alert" [style.display]="classe.value == 'alert-danger' ? 'block' : 'none'">Esse texto somente aparece em caso de ERRO</div>
+        </div>
+    </article>
+</section>
